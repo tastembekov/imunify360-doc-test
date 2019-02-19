@@ -53,13 +53,13 @@ Click <span class="notranslate">_Dashboard_</span> tab to display an overview of
 The following time periods are available:
 
 * Last 24 hours
-* Last7 days
+* Last 7 days
 * Last 30 days
 
-The following representation form is available:
+The following representation forms are available:
 
-* Heatmap visualizes the geographical distribution of incidents
-* Histogram represents the numerical distribution of incidents
+* **Heatmap** visualizes the geographical distribution of incidents
+* **Histogram** represents the numerical distribution of incidents
 
 ![](/images/DashboardGeo.png)
 
@@ -1236,7 +1236,7 @@ To remove the rule from disabled list click <span class="notranslate">_Enable_</
 
 **Overview**
 
-<span class="notranslate">Features Management</span> allows hosters to enable/disable Imunify360 features for each customer. On <span class="notranslate">Feature Management</span> it is possible to manage <span class="notranslate">Proactive Defense</span> and <span class="notranslate">Malware Cleanup</span> for each customer account.
+<span class="notranslate">Features Management</span> allows hosters to enable/disable Imunify360 features for each customer. On <span class="notranslate">Features Management</span> it is possible to manage <span class="notranslate">Proactive Defense</span> and <span class="notranslate">Malware Cleanup</span> for each customer account.
 If a feature is enabled for the user in hoster’s account, the user will be able to see and use it in his account.
 
 ::: tip Note
@@ -1291,25 +1291,25 @@ ______________________ Imunify360 v.4.0 _________________
 
 <div class="notranslate">
 
-### Native Features Management<sup> 4.0</sup>
+### Native Feature Management<sup> 4.0</sup>
 
 </div>
 
-<span class="notranslate">Native Features Management</span> allows a hoster to enable/disable different Imunify360 features for server users. Using this functionality, hosting companies may resell chosen Imunify360 features as a part of hosting packages to end users.
+<span class="notranslate">Native Feature Management</span> allows a hoster to enable/disable different Imunify360 features for server users. Using this functionality, hosting companies may resell chosen Imunify360 features as a part of hosting packages to end users.
 
 
 ### cPanel<sup> 4.0</sup>
 
-<span class="notranslate">Native Features Management</span> is now available under WHM's <span class="notranslate">Feature Management</span> as a <span class="notranslate">Package Extension</span> (PE).
+<span class="notranslate">Native Feature Management</span> is now available under WHM/cPanel <span class="notranslate">Feature Management</span> as a <span class="notranslate">Package Extension</span> (PE).
 
-Using cPanel <span class="notranslate">Native Features Management</span> a hoster can enable/disable <span class="notranslate">Malware Scanner</span> and <span class="notranslate">Proactive Defense</span> for all users with the same package (service plan) instantly.
+Using WHM/cPanel <span class="notranslate">Native Feature Management</span> a hoster can enable/disable <span class="notranslate">Malware Scanner</span> and <span class="notranslate">Proactive Defense</span> for all users with the same package (service plan) instantly.
 
 ::: tip Note
-When switched to <span class="notranslate">Native Features Management</span>, the same functionality will be disabled in the Imunify360 UI for cPanel. The previous Feature Management config becomes overridden by defaults.
+When switched to <span class="notranslate">Native Feature Management</span>, the same functionality will be disabled in the Imunify360 UI for cPanel. The previous Feature Management config becomes overridden by defaults.
 
 :::
 
-**How to switch to cPanel Native Features Managemet**
+**How to switch to WHM/cPanel Native Feature Management**
 
 Go to <span class="notranslate">Imunify360 → Settings → Features Management</span>. You will see the following.
 
@@ -1333,11 +1333,17 @@ Go to <span class="notranslate">WHM/cPanel → Add a Package → Package Extensi
 
 Choose an option for each feature.
 
-<span class="notranslate">**Malaware Scanner**</span>
+<span class="notranslate">**Malware Scanner**</span>
 * <span class="notranslate">_View reports + Cleanup_</span> – a user can view scanning reports and cleanup found malware
 * <span class="notranslate">_View reports only_</span> – a user can view scanning reports but can't cleanup found malware
 * <span class="notranslate">_Not available_</span> – the <span class="notranslate">Malware Scanner</span> is not available for a user, and its tab is hidden on the Imunify360 main menu
-  
+:::tip Note
+The last option is available in the WHM/cPanel Package Manager only and is not available via Imunify360 UI or CLI. We are planning to improve that in Imunify360 4.1.
+:::  
+:::warning Note
+When the **Malware Scanner is not available** for end-user, it doesn't exclude user folders from scanning, so his files will be scanned and the results will be listed in a hoster UI as usual.
+:::
+
 <span class="notranslate">**Proactive Defense**</span>
 * <span class="notranslate">_Available_</span> – the <span class="notranslate">Proactive Defense</span> feature is available for a user
 * <span class="notranslate">_Not available_</span> – the <span class="notranslate">Proactive Defense</span> is deactivated for a user: the feature does not run and its UI is hidden from the Imunify360 main menu
@@ -1345,6 +1351,9 @@ Choose an option for each feature.
 Click <span class="notranslate">_Add_</span> to apply changes.
 
 See also: [CLI](http://localhost:8080/command_line_interface/).
+:::tip Note
+Imunify360 4.0 does not support _Not Available_ state for the Malware Scanner in the original in-app Features Manager and via CLI. You can disable Malware Scanner for a particular package via WHM Package Manager only.
+:::
  
 __________________________
 
