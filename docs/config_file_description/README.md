@@ -127,7 +127,9 @@ to request CAPTCHA again</td></tr>
 <tr><td><span class="notranslate">known_proxies_support: true</span></td>
 <td># enable CDN support, treat IPs behind CDN as any other IPs</td></tr>
 <tr>
-<th colspan="2" align="left"><span class="notranslate">PROACTIVE_DEFENСE:</span></th></tr>
-<tr><td><span class="notranslate">blamer</span></td>
-<td># enable Blamer</td></tr>
+<th colspan="2" align="left"><span class="notranslate">PROACTIVE_DEFENCE:</span></th></tr>
+<tr><td><span class="notranslate">blamer: false</span></td>
+<td># enable (true) or disable (false) Blamer</td></tr>
+<tr><td><span class="notranslate">mode: KILL</span></td>
+<td># available modes: DISABLED/LOG/KILL.</td></tr>
  </table>

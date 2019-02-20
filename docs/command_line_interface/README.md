@@ -1181,7 +1181,7 @@ iimunify360-agent feature-management [command] [--optional argument]...
 
 | | |
 |-|-|
-|<span class="notranslate">`[--feature cleanup]`</span>|enable/disable <span class="notranslate">Malware Cleanup</span>|
+|<span class="notranslate">`[--feature av]`</span>|enable/disable <span class="notranslate">Malware Cleanup</span>|
 <span class="notranslate">`[--feature proactive]`</span>|enable/disable <span class="notranslate">Proactive Defense</span>|
 |<span class="notranslate">`[--users [USERS [USERS ...]]]`</span>| specifies the list of users which will be affected, otherwise the default value will be changed|
 
@@ -1198,7 +1198,7 @@ The following command enables <span class="notranslate">Malware Cleanup</span> f
 <div class="notranslate">
 
 ```
-imunify360-agent feature-management enable --feature cleanup --users user1
+imunify360-agent feature-management enable --feature av --users user1
 ```
 
 </div>
@@ -1231,13 +1231,12 @@ Imunify360 <span class="notranslate">Package Extensions</span> will be auto-enab
 
 All existing <span class="notranslate">Features Management</span> settings will be overridden with the Imunify360 <span class="notranslate">Package Extensions</span> ones for all users.
 
-:::
-tip Note
+:::tip Note
 <span class="notranslate">Features Management</span> tab will be hidden on the User Interface.
 :::
 
 ::: warning Warning
-`feature-management enable/disable --feature cleanup` and `feature-management enable/disable --feature proactive` commands will stop functioning.
+`feature-management enable/disable --feature av` and `feature-management enable/disable --feature proactive` commands will stop functioning.
 :::
 
 
@@ -1272,5 +1271,5 @@ Imunify360 will keep applying users <span class="notranslate">Features Managemen
 :::
 
 ::: warning Warning
-`feature-management enable/disable --feature cleanup` and `feature-management enable/disable --feature proactive` commands will start functioning.
+`feature-management enable/disable --feature av` and `feature-management enable/disable --feature proactive` commands will start functioning.
 :::
