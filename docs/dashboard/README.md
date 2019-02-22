@@ -226,6 +226,7 @@ To move one IP address, click _Cog_ icon in proper IP row and choose <span class
 You will see a notification if IP is moved successfully.
 
 ![](/images/success.jpg)
+
 #### How to remove IP address from the White List
 
 To remove several IPs from the <span class="notranslate">White List</span>, choose proper IPs (use checkboxes) and click <span class="notranslate">_Delete permanently_</span>.
@@ -1287,8 +1288,6 @@ To disable <span class="notranslate">Malware Cleanup</span> account-wide just mo
 
 You can perform all these actions via [CLI](/command_line_interface/).
 
-______________________ Imunify360 v.4.0 _________________
-
 <div class="notranslate">
 
 ### Native Feature Management<sup> 4.0</sup>
@@ -1338,10 +1337,10 @@ Choose an option for each feature.
 * <span class="notranslate">_View reports only_</span> – a user can view scanning reports but can't cleanup found malware
 * <span class="notranslate">_Not available_</span> – the <span class="notranslate">Malware Scanner</span> is not available for a user, and its tab is hidden on the Imunify360 main menu
 :::tip Note
-The last option is available in the WHM/cPanel Package Manager only and is not available via Imunify360 UI or CLI. We are planning to improve that in Imunify360 4.1.
+The last option is available in the WHM/cPanel Package Manager only and is not available via Imunify360 UI or CLI.
 :::  
 :::warning Note
-When the **Malware Scanner is not available** for end-user, it doesn't exclude user folders from scanning, so his files will be scanned and the results will be listed in a hoster UI as usual.
+When the **Malware Scanner is not available** for end-user, it doesn't exclude user folders from scanning, so his files will be scanned and the results will be listed in an admin UI as usual.
 :::
 
 <span class="notranslate">**Proactive Defense**</span>
@@ -1355,7 +1354,6 @@ See also: [CLI](http://localhost:8080/command_line_interface/).
 Imunify360 4.0 does not support _Not Available_ state for the Malware Scanner in the original in-app Features Manager and via CLI. You can disable Malware Scanner for a particular package via WHM Package Manager only.
 :::
  
-__________________________
 
 ### Attributions
 
