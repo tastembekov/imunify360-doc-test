@@ -1,12 +1,8 @@
 # Imunify360 User Interface
 
-Imunify360 dashboard is available directly within your control panel. It displays all the security events and the latest incidents updated every 30 seconds. It allows filtering and selecting events based on various parameters, reviewing the details of the incidents, managing <span class="notranslate">White List, Gray List</span>, and <span class="notranslate">Black List</span>, Blocked ports and configuring settings.
+Imunify360 is an all-in-one security solution with robust herd protection against the newest attacks, and it is available directly within your control panel (cPanel, Plesk, and DirectAdmin).
 
-::: tip Note
-cPanel, Plesk, and DirectAdmin are supported at the moment. Standalone version are coming soon.
-:::
-
-Log in to WHM as an admin and go to <span class="notranslate">Plugins</span>, choose Imunify360 to get to the Imunify360 user interface.
+Log in to your control panel as an admin and go to <span class="notranslate">Plugins</span>, choose Imunify360 to get to the Imunify360 user interface.
 
 It allows to access:
 * <span class="notranslate">[Support](/dashboard/#support)</span> – allows you to contact our support team directly from your Imunify360 User Interface
@@ -15,7 +11,7 @@ It allows to access:
 
 * <span class="notranslate">[Incidents](/dashboard/#incidents)</span> – the list of all suspicious activity on the server.
 
-* <span class="notranslate">[Firewall](/dashboard/#firewall)</span> – a dashboard of <span class="notranslate">Black List, White List</span> and <span class="notranslate">Gray List</span>, and Blocked ports with the ability to manage them.
+* <span class="notranslate">[Lists](/dashboard/#firewall)</span> – a dashboard of <span class="notranslate">Black List, White List</span> and <span class="notranslate">Gray List</span>, and <span class="notranslate">Blocked Ports</span> with the ability to manage them.
 
 * <span class="notranslate">[Malware Scanner](/dashboard/#malware-scanner)</span> – real-time file scanner.
 
@@ -42,13 +38,57 @@ A support ticket will be created and an email will be sent to a specified email 
 
 ## Dashboard
 
+You can access the Imunify360 Dashboard from your control panel. It shows security events as charts and heat maps.
+It's a great way to analyze incidents that happened within the past day, week or month.
+
 :::tip Note
-Beta 4.0
+Imunify360 4.0
 :::
 
 Click <span class="notranslate">_Dashboard_</span> tab to display an overview of incidents recorded during the selected time interval, an estimate of the intensity of attacks, and correlate events across all sources.
 
 ![](/images/DashboardGeneral.png)
+
+
+### Multi-server Dashboard 
+
+:::tip Note
+Beta 4.1
+:::
+
+Starting from Imunify360 version 4.1, the Dashboard can display Imunify360 performance data for a number of specified servers. 
+* You can add a specified server using server key – a unique server id that identifies an installed Imunify360 instance.
+* You can easily remove a specified server.
+* You can use _Server_ drop-down to show a list of all added servers.
+
+![](/images/dashboard_servers.png)
+
+
+#### **How to get a server key**
+
+There are two ways to get a server key.
+
+1. Click the key symbol ![](/images/copy_key.png) to copy server key of the selected server to the clipboard.
+
+2. Go to the `/var/imunify360/license.json` file and find `id` filed. Your server id looks like a number-alphabetical string `SSCZ7WB3sjCFLfvz`.
+
+#### **How to add a server**
+
+To add a new server, click the _Add Server_ symbol ![](/images/add_server.png). The _Add Server_ pop-up opens.
+
+ ![](/images/add_server_key.png).
+
+Add a server key and click _Confirm_ to add the server or click _Cancel_ to close the pop-up.
+
+#### **How to remove a server**
+
+To remove a server, click the _Trash Can_ symbol ![](/images/remove_server.png). The _Remove Server_ pop-up opens.
+
+![](/images/remove_server_popup.png)
+
+Click _Confirm_ to remove the server or click _Cancel_ to close the pop-up.
+
+### Charts and heat maps
 
 The following time periods are available:
 
@@ -155,147 +195,188 @@ Click an incident to expand the detailed information.
 
 ![](/images/move_button_zoom94.png)
 
-## Firewall
+## Lists
 
 
-<span class="notranslate">_Firewall_</span> tab allows viewing and managing the IP addresses in the lists:
+<span class="notranslate">_Lists_</span> tab allows viewing and managing the IP addresses in the lists:
 
 * <span class="notranslate">White List</span> – allows to always accept IPs from the list.
 * <span class="notranslate">Gray List</span> – an auto-generated list of all the IPs blocked by Imunify360, based on Sensors alerts and alerts from the central server.
 * <span class="notranslate">Black List</span> – allows to always block IPs from the list.
-* Blocked ports – allows to manage the list of blocked ports.
+* <span class="notranslate">Blocked Ports</span> – allows to manage the list of blocked ports.
 
 ### White List
 
-Click <span class="notranslate">_Firewall_</span> in the main menu then choose <span class="notranslate">_White List_</span>.
+Click <span class="notranslate">_Lists_</span> in the main menu then choose <span class="notranslate">_White List_</span>.
+
+
+![](/images/WhiteList.png)
 
 Use filters to show the exact list of the IPs:
 
-* <span class="notranslate">_Page size_</span> – allows setting the number of the incidents to be shown on the page.
-* _IP_ – allows filtering the list by IP. Tick _IP_ checkbox to enable input field where you can enter an IP or a part of.
-* <span class="notranslate">_Country_</span> – allows filtering the list by country origin. Tick <span class="notranslate">_Country_</span> checkbox to enable an input field with autocomplete where you can enter a country name. Imunify360 will show the list of IPs of the chosen country.
+* _IP_ – allows filtering the list by IP. Enter an IP or a part of it into the input field.
+* <span class="notranslate">_Country_</span> – allows filtering the list by country origin. Enter a country name into the input field with autocomplete. Imunify360 will show the list of IPs of the chosen country.
+* <span class="notranslate">Comments</span> – allows filtering the list by comments. Enter a comment into the input field.
+* Use <span class="notranslate">_Items per page_</span> at the page bottom right to set the number of the incidents to be shown on the page.
 
 You can perform the following actions with the IPs in the <span class="notranslate">White List</span>:
 
-* Add IPs manually
+* Add IP manually
 * Add a comment to IP
-* Move IPs from the White List to the Black List
-* Remove IPs from the White List
+* Move IP from the White List to the Black List
+* Remove IP from the White List
 
-#### How to add IPs manually
+#### How to add IP manually
 
-To add an IP to the <span class="notranslate">White List</span> click <span class="notranslate">_Add_</span> on the right side of the page:
+To add an IP to the <span class="notranslate">White List</span>, click <span class="notranslate">_Add_</span> on the right side of the page. The following pop-up opens.
 
-![](/images/add.jpg)
+![](/images/add_ip_white.png)
 
-In the pop-up choose <span class="notranslate">_Add IP_</span> tab and specify the following:
+In the pop-up choose <span class="notranslate">_IP_</span> tab and fill out:
 
-* <span class="notranslate">_Enter IP_</span> – add IP or subnet in [CIDR notation](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) .
-
-* <span class="notranslate">_Enter a comment_</span> – add a comment to the IP or subnet (optional).
-* Choose where to add the IP or subnet: to the <span class="notranslate">Black List</span> or to <span class="notranslate">White List</span>.
-  * For White list it is possible to tick <span class="notranslate">_Full Access_</span> checkbox to make this IP or subnet ignore the rules in Blocked ports. The IPs with full access have a crown icon in the IP column. Note that it is possible to grant or remove full access afterwards in the table, just click _Cog_ icon and choose <span class="notranslate">_Grant Full Access_</span> to grant or <span class="notranslate">_Remove Full Access_</span> to remove it.
-
-![](/images/hmfile_hash_1d7287fc.jpg)
+* <span class="notranslate">_Enter IP_</span> – IP or subnet in [CIDR notation](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+* <span class="notranslate">_Enter a comment_</span> – type a comment to the IP or subnet (optional)
+* <span class="notranslate">_Enter TTL_</span> in days or hours – time to live – for how long the IP will be in the White List.
+* Choose <span class="notranslate">_White List_</span> radio button
+   * For the White List it is possible to tick <span class="notranslate">_Full Access_</span> checkbox to make this IP or subnet ignore the rules in Blocked ports. The IPs with full access have a crown icon in the IP column.
+  ::: tip Note
+  You can grant or remove full access afterwards in the table, just click _Cog_ icon and choose <span class="notranslate">_Grant Full Access_</span> to grant or <span class="notranslate">_Remove Full Access_</span> to remove it.
+  :::
 
 When done, click <span class="notranslate">_Add IP_</span> to confirm your action or <span class="notranslate">_Cancel_</span> to hide pop-up.
 
-![](/images/add_ip_zoom76.png)
-
-You will see a notification if an IP has been added successfully:
+You will see a notification if an IP has been added successfully.
 
 ![](/images/added_zoom80.png)
 
 #### How to add a comment to IP
 
-In the proper IP row click plus sign (+) in the <span class="notranslate">_Comment_</span> column, type a comment and click <span class="notranslate">_Save_</span> in the pop-up.
+In the proper IP row click ![](/images/plus_icon.png) in the <span class="notranslate">_Comment_</span> column, type a comment and click ![](/images/tick_icon.png).
 
-![](/images/add_comment_zoom72.png)
-
-To remove a comment just delete the text in the pop-up and click <span class="notranslate">_Save_</span>.
+To remove a comment, click ![](/images/pen_icon.png) and remove the text. Then click  ![](/images/tick_icon.png).
 
 #### How to move IP from the White List to the Black List
 
-To move several IPs from the <span class="notranslate">White List</span> to the <span class="notranslate">Black List</span> choose proper IPs (use checkboxes), click <span class="notranslate">_Move permanently_</span> at the top of the table and choose <span class="notranslate">_Black List_</span> in the drop-down.
+To move several IPs from the <span class="notranslate">White List</span> to the <span class="notranslate">Black List</span> choose proper IPs (use checkboxes), click <span class="notranslate">_Group Actions_</span> at the top of the table and choose <span class="notranslate">_Move to Black List_</span> in the drop-down.
 
 ![](/images/move_ip_zoom97.png)
 
-To move one IP address, click _Cog_ icon in proper IP row and choose <span class="notranslate">_Black List_</span> in the drop-down.
+To move one IP address, click _Cog_ icon in a proper IP row and choose <span class="notranslate">_Move to Black List_</span> in the drop-down.
 
- ![](/images/move_ip_01.jpg)
-You will see a notification if IP is moved successfully.
+ ![](/images/move_ip_01.png)
+You will see a notification if the IP is moved successfully.
 
 ![](/images/success.jpg)
 
 #### How to remove IP address from the White List
 
-To remove several IPs from the <span class="notranslate">White List</span>, choose proper IPs (use checkboxes) and click <span class="notranslate">_Delete permanently_</span>.
+To remove several IPs from the <span class="notranslate">White List</span>, choose proper IPs (use checkboxes) and click <span class="notranslate">_Delete permanently_</span>. Then confirm the action.
 
 ![](/images/remove_zoom86.png)
 
-To move an exact IP, just click _Bin_ icon in front of a proper IP address.
+To remove an exact IP from the White List, just click _Bin_ icon for a proper IP address and confirm the action.
 
-You will see a notification if the IP is deleted successfully:
+You will see a notification if the IP is deleted successfully.
 
 ![](/images/success_01_zoom75.png)
 
 
 #### Whitelisted trusted services
 
-Imunify360 has a predefined whitelisted services. The actual list is always available on the [link](https://files.imunify360.com/static/whitelist/v2/).
+Imunify360 has predefined whitelisted services. The actual list is always available on the [link](https://files.imunify360.com/static/whitelist/v2/).
 
 ### Gray List
 
-Choose <span class="notranslate">_Firewall_</span> tab in the main menu then click <span class="notranslate">_Gray List_</span>.
+Choose <span class="notranslate">_Lists_</span> tab in the main menu then click <span class="notranslate">_Gray List_</span>.
 
-Use filters to show the exact list of IPs:
+![](/images/Gray_List.png)
 
-* <span class="notranslate">_Page size_</span> – allows setting the number of the incidents to be shown on the page.
-* _IP_ – allows filtering the list by IP. Tick _IP_ checkbox to enable input field where you can enter an IP or part of IP.
-* <span class="notranslate">_Country_</span> – allows filtering the list by country origin. Tick <span class="notranslate">_Country_</span> checkbox to enable an input field with autocomplete where you can enter a country name. Imunify360 will show the list of IPs of the chosen country.
+Use filters to show the exact list of the IPs:
 
-In the <span class="notranslate">Gray List</span> you can only remove IPs from it.
+* _IP_ – allows filtering the list by IP. Enter an IP or a part of it into the input field.
+* <span class="notranslate">_Country_</span> – allows filtering the list by country origin. Enter a country name into the input field with autocomplete. Imunify360 will show the list of IPs of the chosen country.
+* <span class="notranslate">Comments</span> – allows filtering the list by comments. Enter a comment into the input field.
+* Use <span class="notranslate">_Items per page_</span> at the page bottom right to set the number of the incidents to be shown on the page.
 
-#### How to remove IP from the Gray list
+You can perform the following actions with the IPs in the <span class="notranslate">Gray List</span>:
 
-To remove several IPs from the <span class="notranslate">Gray List</span> choose IPs in the list (use checkboxes) and click <span class="notranslate">_Delete permanently_</span>.
+* Move IP from the Gray List to the Black List
+* Move IP from the Gray List to the White List
+* Remove IP from the Gray List
 
-![](/images/remove_ip_fro_gray.jpg)
+#### How to move IP from the Gray List to the Black List
 
-To remove an exact IP click _Bin_ icon in front of a proper IP.
+To move several IPs from the <span class="notranslate">Gray List</span> to the <span class="notranslate">Black List</span> choose proper IPs (use checkboxes), click <span class="notranslate">_Group Actions_</span> at the top of the table and choose <span class="notranslate">_Move to Black List_</span> in the drop-down. Then confirm the action.
 
-You will see a notification if the IP is deleted successfully.
+![](/images/gray_moved_black.png)
+
+To move one IP address, click _Cog_ icon in a proper IP row and choose <span class="notranslate">_Move to Black List_</span> in the drop-down. Then confirm the action.
+
+ ![](/images/gray_moved_black_one.png)
+
+You will see a notification if the IP is moved successfully.
+
+![](/images/success.jpg)
+
+#### How to move IP from the Gray List to the White List
+
+To move several IPs from the <span class="notranslate">Gray List</span> to the <span class="notranslate">White List</span> choose proper IPs (use checkboxes), click <span class="notranslate">_Group Actions_</span> at the top of the table and choose <span class="notranslate">_Move to White List_</span> in the drop-down. Then confirm the action.
+
+![](/images/gray_moved_white.png)
+
+To move one IP address, click _Cog_ icon in a proper IP row and choose <span class="notranslate">_Move to White List_</span> in the drop-down. Then confirm the action.
+
+ ![](/images/gray_moved_white_one.png)
+
+You will see a notification if the IP is moved successfully.
+
+![](/images/success.jpg)
+
+
+#### How to remove IP from the Gray List
+
+To remove several IPs from the <span class="notranslate">Gray List</span>, choose IPs in the list (use checkboxes) and click <span class="notranslate">_Delete permanently_</span>. Then confirm the action.
+
+![](/images/remove_ip_fro_gray.png)
+
+To remove an exact IP, click _Bin_ icon for a proper IP row and confirm the action.
+
+![](/images/remove_ip_from_gray_one.png)
+
+You will see a notification if the IP is removed successfully.
 
 ![](/images/success_01_zoom76.png)
 
 ### Black List
 
-Choose <span class="notranslate">_Firewall_</span> tab in the main menu then click <span class="notranslate">_Black List_</span>.
+Choose <span class="notranslate">_Lists_</span> tab in the main menu then click <span class="notranslate">_Black List_</span>.
 
-Use filters to show an exact list of the IPs:
+![](/images/Black_List.png)
 
-* <span class="notranslate">_Page size_</span> – allows setting the number of the incidents to be shown on the page.
-* _IP_ – allows filtering the list by IP. Tick _IP_ checkbox to enable input field where you can enter an IP or a part of.
-* <span class="notranslate">_Country_</span> – allows filtering the list by country origin. Tick <span class="notranslate">_Country_</span> checkbox to enable an input field with autocomplete where you can enter a country name. Imunify360 will show the list of IPs of the chosen country.
+Use filters to show the exact list of the IPs:
+
+* _IP_ – allows filtering the list by IP. Enter an IP or a part of it into the input field.
+* <span class="notranslate">_Country_</span> – allows filtering the list by country origin. Enter a country name into the input field with autocomplete. Imunify360 will show the list of IPs of the chosen country.
+* <span class="notranslate">Comments</span> – allows filtering the list by comments. Enter a comment into the input field.
+* Use <span class="notranslate">_Items per page_</span> at the page bottom right to set the number of the incidents to be shown on the page.
 
 The following actions are available with IPs in the <span class="notranslate">Black List</span>:
 
-* Add IPs manually
+* Add IP manually
 * Add a country
-* Add comments to IPs
-* Move IPs from the <span class="notranslate">Black List</span> to the <span class="notranslate">White List</span>
-* Remove IPs manually
+* Add comments to IP
+* Move IP from the <span class="notranslate">Black List</span> to the <span class="notranslate">White List</span>
+* Remove IP manually
 
-#### How to add IPs manually
+#### How to add IP manually
 
 To add an IP to the <span class="notranslate">Black List</span> click <span class="notranslate">_Add_</span> on the right side of the page.
 
-![](/images/firewallblacklistwarning_zoom70.png)
-
-In the pop-up choose <span class="notranslate">_Add IP_</span> tab and fill out:
+In the pop-up choose <span class="notranslate">_IP_</span> tab and fill out:
 
 * <span class="notranslate">_Enter IP_</span> – IP or subnet in [CIDR notation](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
 * <span class="notranslate">_Enter a comment_</span> – type a comment to the IP or subnet (optional)
+* <span class="notranslate">_Enter TTL_</span> in days or hours – time to live – for how long the IP will be in the Black List.
 * Choose <span class="notranslate">_Black List_</span> radio button
 
 When done, click <span class="notranslate">_Add IP_</span> to confirm your action or <span class="notranslate">_Cancel_</span> to close the pop-up.
@@ -310,20 +391,18 @@ You will see a notification if the IP is added successfully.
 Required Imunify360 Beta version 2.7.4 or later
 :::
 
-If <span class="notranslate">_Show only manually added_</span> switcher is disabled (default setting) than IPs automatically blocked by Imunify360 without access to CAPTCHA are displayed in a B<span class="notranslate">lack List</span> along with manually added IPs. They have _**Imunify360**_ in the <span class="notranslate">**Source**</span> column and <span class="notranslate">_**Automatically blocked due to distributed attack**_</span> in <span class="notranslate">**Comment**</span> column.
+If <span class="notranslate">_Show only manually added_</span> switcher is disabled (default setting) than IPs automatically blocked by Imunify360 without access to CAPTCHA are displayed in the <span class="notranslate">Black List</span> along with manually added IPs. They have _**Imunify360**_ in the <span class="notranslate">**Source**</span> column and <span class="notranslate">_**Automatically blocked due to distributed attack**_</span> in <span class="notranslate">**Comment**</span> column.
 
 
 ::: tip Note
-Regardless of switched CSF off or on, blocked by Imunify360 IPs exist along with CSF deny list.Warning displayed at the top of the table says that CSF is running and can be used for blacklisting along with Imunify360.
+Regardless of switched CSF off or on, blocked by Imunify360 IPs exist along with CSF deny list. Warning displayed at the top of the table says that CSF is running and can be used for blacklisting along with Imunify360.
 :::
 
 #### How to add a country manually
 
-To add a country to the Black List, click <span class="notranslate">_Add_</span> on the right side of the page:
+To add a country to the Black List, click <span class="notranslate">_Add_</span> on the right side of the page.
 
-![](/images/add_black.jpg)
-
-In the pop-up choose <span class="notranslate">_Add Country_</span> tab and fill out:
+In the pop-up choose <span class="notranslate">_Country_</span> tab and fill out:
 
 * <span class="notranslate">_Enter country_</span> – autocomplete field. Just start typing.
 * <span class="notranslate">_Enter comment_</span> – type a comment to IP or subnet (optional).
@@ -338,86 +417,94 @@ You will see a notification if a country has been added successfully.
 
 #### How to add a comment to IP
 
-In a proper IP line click plus sign (+) in the Comment column, add a comment and click <span class="notranslate">_Save_</span> in the pop-up:
+In the proper IP row click ![](/images/plus_icon.png) in the <span class="notranslate">_Comment_</span> column, type a comment and click ![](/images/tick_icon.png).
 
-![](/images/add_comment_zoom86.png)
+To remove a comment, click ![](/images/pen_icon.png) and remove the text. Then click  ![](/images/tick_icon.png).
 
-To remove a comment just delete the text in the pop-up and click <span class="notranslate">_Save_</span>.
+#### How to move IP from the Black List to the White List
 
-#### How to move IPs from the Black List to the White List
+To move IP from the <span class="notranslate">Black List</span> to the <span class="notranslate">White List</span>, choose proper IPs in the list (use checkboxes), click <span class="notranslate">_Group Actions_</span> at the top of the table and choose <span class="notranslate">_Move to White List_</span> in the drop-down. Then confirm the action.
 
-To move IPs from the <span class="notranslate">Black List</span> to the <span class="notranslate">White List</span> choose proper IPs in the list (use checkboxes), click <span class="notranslate">_Move permanently_</span> at the top of the table and choose <span class="notranslate">White List</span> in the drop-down.
+![](/images/move_ip_black.png)
 
-![](/images/move_ip_black.jpg)
+To move an exact IP, just click the _Cog_ icon in a proper IP row and choose <span class="notranslate">_Move to White List_</span> in the drop-down. Then confirm the action.
 
-To move an exact IP just click on a _Cog_ icon in a proper IP row and choose <span class="notranslate">_White List_</span> in the drop-down.
-
- ![](/images/move_black.jpg)
+ ![](/images/move_black.png)
 You will see a notification if an IP is moved to the <span class="notranslate">White List</span> successfully.
 
 ![](/images/success.jpg)
-#### How to remove IPs from the Black List
 
-To remove IPs from the Black List choose proper IPs in the table (use checkboxes) and click <span class="notranslate">_Delete permanently_</span>.
+#### How to remove IP from the Black List
 
-![](/images/delete_permanently.jpg)
-To remove an exact IP just click _Bin_ icon in the row.
+To remove IP from the <span class="notranslate">Black List</span>, choose proper IPs in the table (use checkboxes) and click <span class="notranslate">_Delete permanently_</span>. Then confirm the action.
 
-You will see a notification if an IP is successfully deleted.
+![](/images/delete_permanently.png)
+To remove an exact IP, just click _Bin_ icon in the proper IP row. Then confirm the action.
+
+You will see a notification if an IP is successfully removed.
 
 ![](/images/success_01_zoom75.png)
 
-### Blocked ports
+### Blocked Ports
 
-This feature allows to block specific ports for TCP/UDP connection. It is also possible to add specific IPs or subnet as a whitelisted, so that the rule for the port will not work.
+This feature allows to block specific ports for TCP/UDP connection. It is also possible to add specific IPs or subnet as a whitelisted so that the rule for the port will not work.
 
-Click <span class="notranslate">_Firewall_</span> and choose <span class="notranslate">_Blocked Ports_</span>.
+Click <span class="notranslate">_Lists_</span> and choose <span class="notranslate">_Blocked Ports_</span>.
 
+![](/images/Blocked_Ports.png)
 
 ::: tip Note
 If CSF integration enabled, then <span class="notranslate">Blocked Ports</span> will be disabled. Imunify360 imports Closed ports and their whitelisted IPs from CSF.
 :::
 
-Use filters to show the exact list of IPs:
+Use filters to show the exact list of the IPs:
 
-* <span class="notranslate">Page size</span> – allows setting the number of the incidents to be shown on the page.
-* IP – allows filtering the list by IP. Tick IP checkbox to enable input field where you can enter an IP or a part of.
-* <span class="notranslate">Description</span> – allows filtering the list by text in notes.
+* _IP_ – allows filtering the list by IP. Enter an IP or a part of it into the input field.
+* <span class="notranslate">_Country_</span> – allows filtering the list by country origin. Enter a country name into the input field with autocomplete. Imunify360 will show the list of IPs of the chosen country.
+* <span class="notranslate">Comments</span> – allows filtering the list by comments. Enter a comment into the input field.
+* Use <span class="notranslate">_Items per page_</span> at the page bottom right to set the number of the incidents to be shown on the page.
 
 The following actions are available for the ports:
 
 * add port to the list of blocked ports
 * edit ports in the list of blocked ports
+* add a comment
+* delete permanently
 
 #### Add a port to the list of blocked ports
 
-On the <span class="notranslate">Firewall</span> page choose <span class="notranslate">_Blocked ports_</span> and click <span class="notranslate">_Add Port_</span>. In the pop-up specify the following:
+On the <span class="notranslate">_Lists_</span> page choose <span class="notranslate">_Blocked ports_</span> and click <span class="notranslate">_Add_</span>. In the pop-up specify the following:
 
 * <span class="notranslate">Port</span> – the number of the port to be added to the list of blocked ports.
 * TCP/UDP – tick the checkboxes of connection types for the port that should be blocked.
-* <span class="notranslate">Description</span> (optional) – a text to be added as a note for the port.
-* <span class="notranslate">List of IPs/Subnets</span> – add IPs or subnets to the Whitelist separated by commas. They will be able to use the port.
+* <span class="notranslate">Enter comment</span> (optional) – a text to be added as a note for the port.
+* <span class="notranslate">Whitelisted IPs</span> – add IPs separated by comma to the White List. They will be able to use the port.
 
 Click <span class="notranslate">_Add Port_</span> to proceed or <span class="notranslate">_Cancel_</span> to close the pop-up.
 
-![](/images/add_port.jpg)
+![](/images/add_port.png)
 
 #### Edit ports in the blocked ports list
 
 To add an IP or a subnet to the <span class="notranslate">White List</span> for the port, click _+IP_ and in the <span class="notranslate">_Add IP/Subnet_</span> pop-up specify the following:
 
 * Enter IP – IP or subnet that should be added to the whitelist
-* Enter description – a desxription to be added as a note to the IP or subnet.
+* Enter description – a description to be added as a note to the IP or subnet.
 
-![](/images/add_ip_ports.jpg)
+![](/images/add_ip_ports.png)
 
-In the blocked ports list it is possible to edit notes for IPs and ports. Click _Pen_ icon near the note and make changes.
+#### Add a comment
 
-![](/images/add_port_01.jpg)
+In the proper port row click ![](/images/plus_icon.png) in the <span class="notranslate">_Note_</span> column, type a comment and click ![](/images/tick_icon.png).
 
-To delete port or separate IP/subnet, click _Bin_ icon in the row of the element.
+To remove a comment, click ![](/images/pen_icon.png) and remove the text. Then click  ![](/images/tick_icon.png).
 
-![](/images/add_port_02.jpg)
+
+#### Delete permanently
+
+To delete a port or separate IP/subnet, click _Bin_ icon in the row of the element.
+
+![](/images/add_port_02.png)
 
 
 ## Malware Scanner
@@ -1294,21 +1381,18 @@ You can perform all these actions via [CLI](/command_line_interface/).
 
 </div>
 
-<span class="notranslate">Native Feature Management</span> allows a hoster to enable/disable different Imunify360 features for server users. Using this functionality, hosting companies may resell chosen Imunify360 features as a part of hosting packages to end users.
+<span class="notranslate">Feature Management</span> allows a hoster to enable/disable different Imunify360 features for server users. Using this functionality, hosting companies may resell chosen Imunify360 features as a part of hosting packages to end-users as well as make features available/unavailable for a group of end-users.
 
+### WHM/cPanel<sup> 4.0</sup>
 
-### cPanel<sup> 4.0</sup>
-
-<span class="notranslate">Native Feature Management</span> is now available under WHM/cPanel <span class="notranslate">Feature Management</span> as a <span class="notranslate">Package Extension</span> (PE).
-
-Using WHM/cPanel <span class="notranslate">Native Feature Management</span> a hoster can enable/disable <span class="notranslate">Malware Scanner</span> and <span class="notranslate">Proactive Defense</span> for all users with the same package (service plan) instantly.
+<span class="notranslate">WHM/cPanel Feature Management</span> is now available under <span class="notranslate">WHM/cPanel Package Manager</span> via <span class="notranslate">Package Extension (PE)</span>.
+Using <span class="notranslate">WHM/cPanel Native Feature Management</span> a hoster can enable/disable <span class="notranslate">Malware Scanner</span> and <span class="notranslate">Proactive Defense</span> for all users with the same package (service plan) instantly.
 
 ::: tip Note
-When switched to <span class="notranslate">Native Feature Management</span>, the same functionality will be disabled in the Imunify360 UI for cPanel. The previous Feature Management config becomes overridden by defaults.
-
+When switched to <span class="notranslate">WHM/cPanel Feature Management</span>, the same functionality will be disabled in the Imunify360 UI. The previous Feature Management config becomes overridden by defaults.
 :::
 
-**How to switch to WHM/cPanel Native Feature Management**
+**How to switch to WHM/cPanel Feature Management**
 
 Go to <span class="notranslate">Imunify360 → Settings → Features Management</span>. You will see the following.
 
@@ -1316,9 +1400,14 @@ Go to <span class="notranslate">Imunify360 → Settings → Features Management<
 
 Click <span class="notranslate">_Details_</span>. You will see the following pop-up.
 
+
 ![](/images/SwitchToNativeFeaturesManagement.png)
 
 Click <span class="notranslate">_Agree and Switch_</span> to confirm the action or click <span class="notranslate">_Cancel_</span> to close the popup.
+
+:::tip Note
+Note that current Imunify360 settings will be reset to default values after switching to <span class="notranslate">WHM/cPanel Feature Management</span> mode. You can switch back to in-app <span class="notranslate">Imunify360 Feature Management</span> mode at any time via CLI command. The end-user values will be reset to default values upon any mode switching.
+:::
 
 When switched, you will see the following.
 
@@ -1326,7 +1415,7 @@ When switched, you will see the following.
 
 **How to configure Imunify360 Features using WHM/cPanel Package Extensions**
 
-Go to <span class="notranslate">WHM/cPanel → Add a Package → Package Extensions</span> and tick <span class="notranslate">Imunify360 Features</span>.
+Go to <span class="notranslate">WHM/cPanel → Add a Package → Package Extensions</span> and tick <span class="notranslate">Imunify360 Features</span> (if it’s not selected).
 
 ![](/images/WHMPackageExtension.png)
 
@@ -1334,7 +1423,7 @@ Choose an option for each feature.
 
 <span class="notranslate">**Malware Scanner**</span>
 * <span class="notranslate">_View reports + Cleanup_</span> – a user can view scanning reports and cleanup found malware
-* <span class="notranslate">_View reports only_</span> – a user can view scanning reports but can't cleanup found malware
+* <span class="notranslate">_View reports only_</span> – a user can view scanning reports but can't cleanup found malware (note that quarantine and file removal functionality is still available in this mode)
 * <span class="notranslate">_Not available_</span> – the <span class="notranslate">Malware Scanner</span> is not available for a user, and its tab is hidden on the Imunify360 main menu
 :::tip Note
 The last option is available in the WHM/cPanel Package Manager only and is not available via Imunify360 UI or CLI.
@@ -1351,7 +1440,7 @@ Click <span class="notranslate">_Add_</span> to apply changes.
 
 See also: [CLI](http://localhost:8080/command_line_interface/).
 :::tip Note
-Imunify360 4.0 does not support _Not Available_ state for the Malware Scanner in the original in-app Features Manager and via CLI. You can disable Malware Scanner for a particular package via WHM Package Manager only.
+Imunify360 4.0 does not support _Not Available_ state for the Malware Scanner in the original in-app Features Management and via CLI. You can disable Malware Scanner for a particular package via WHM Package Manager only.
 :::
  
 
@@ -1365,6 +1454,9 @@ Click <span class="notranslate">_Settings_</span> and choose <span class="notran
 * <span class="notranslate">_Link_</span> – URL to the IDS official page
 
 ![](/images/pfattr.jpg)
+
+Country-based white or blacklisting includes GeoLite2 data created by MaxMind, available from
+[https://www.maxmind.com](https://www.maxmind.com).
 
 #### Hosting panels specific settings
 
