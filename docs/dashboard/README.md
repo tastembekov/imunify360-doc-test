@@ -47,7 +47,7 @@ Imunify360 4.0
 
 Click <span class="notranslate">_Dashboard_</span> tab to display an overview of incidents recorded during the selected time interval, an estimate of the intensity of attacks, and correlate events across all sources.
 
-![](/images/DashboardGeneral.png)
+![](/images/DashboardGeneral1.png)
 
 
 ### Multi-server Dashboard 
