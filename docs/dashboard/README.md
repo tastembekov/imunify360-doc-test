@@ -1115,6 +1115,10 @@ Tick <span class="notranslate">_Enable Sentry error reporting_</span> checkbox t
 Click <span class="notranslate">_Save changes_</span> button on the bottom of the section to save changes.
 
 #### **Contact Details**
+
+:::tip Note
+Imunify360 version 4.1 Beta
+:::
  
 Type your email into the <span class="notranslate">_Email_</span> field to receive email reports about critical issues, security alerts or system misconfigurations detected on the registered servers.
 
@@ -1128,7 +1132,13 @@ Click <span class="notranslate">_Save changes_</span> button on the bottom of th
 
 ### Malware
 
-Go to <span class="notranslate">Imunify360 → Settings → Malware</span>. Here you can configure General and <span class="notranslate">Malware Cleanup</span> Settings<sup>3.7.1+</sup>.
+Go to <span class="notranslate">Imunify360 → Settings → Malware</span>. 
+
+Here you can configure the following:
+* <span class="notranslate">General</span>
+* <span class="notranslate">Background Scanning</span><sup> Beta 4.1+</sup>
+* <span class="notranslate">Malware Cleanup</span><sup> 3.7.1+</sup>
+* <span class="notranslate">Proactive Defense</span><sup> 4.0+</sup>
 
 ::: tip Note
 Read [CXS integration](/ids_integration/#cxs-integration) documentation carefully to make Malware Scanner work properly if you decided to use the former instead of Imunify360 anti-malware protection.
@@ -1159,6 +1169,28 @@ Read [CXS integration](/ids_integration/#cxs-integration) documentation carefull
   * <span class="notranslate">Just display in dashboard</span>
 
 Tick required checkboxes and click <span class="notranslate">_Save changes_</span> button.
+
+#### **Background Scanning<sup> Beta 4.1</sup>**
+
+Allows to set up automatic, scheduled, background scanning of user accounts.
+
+* <span class="notranslate">_Run scanning_</span> — select the desired period:
+  * <span class="notranslate">Never</span>
+  * <span class="notranslate">Daily</span>
+  * <span class="notranslate">Weekly</span>
+  * <span class="notranslate">Monthly</span>
+
+![](/images/background_scanning.png)
+
+Depending on the selected period, precise settings.
+
+If <span class="notranslate">_Run scanning_</span> is set to <span class="notranslate">_Daily_</span>, choose the exact time at the <span class="notranslate">_Run at_</span> dropdown.
+
+If <span class="notranslate">_Run scanning_</span> is set to <span class="notranslate">_Weekly_</span>, choose the day of the week at the <span class="notranslate">_Run on_</span> dropdown and exact time at the <span class="notranslate">_Run at_</span> dropdown.
+
+If <span class="notranslate">_Run scanning_</span> is set to <span class="notranslate">_Monthly_</span>, choose the day of the month at the <span class="notranslate">_Day of month to run_</span> dropdown and exact time at the <span class="notranslate">_Run at_</span> dropdown.
+
+You can track the scanning activity at the <span class="notranslate">[Malware Scanner](#malware-scanner)</span> tab.
 
 **Cleanup<sup>3.7.1+</sup>**
 
