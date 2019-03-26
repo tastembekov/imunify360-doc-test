@@ -1184,11 +1184,11 @@ Allows to set up automatic, scheduled, background scanning of user accounts.
 
 Depending on the selected period, precise settings.
 
-If <span class="notranslate">_Run scanning_</span> is set to <span class="notranslate">_Daily_</span>, choose the exact time at the <span class="notranslate">_Run at_</span> dropdown.
+* If <span class="notranslate">_Run scanning_</span> is set to <span class="notranslate">_Daily_</span>, choose the exact time at the <span class="notranslate">_Run at_</span> dropdown.
 
-If <span class="notranslate">_Run scanning_</span> is set to <span class="notranslate">_Weekly_</span>, choose the day of the week at the <span class="notranslate">_Run on_</span> dropdown and exact time at the <span class="notranslate">_Run at_</span> dropdown.
+* If <span class="notranslate">_Run scanning_</span> is set to <span class="notranslate">_Weekly_</span>, choose the day of the week at the <span class="notranslate">_Run on_</span> dropdown and exact time at the <span class="notranslate">_Run at_</span> dropdown.
 
-If <span class="notranslate">_Run scanning_</span> is set to <span class="notranslate">_Monthly_</span>, choose the day of the month at the <span class="notranslate">_Day of month to run_</span> dropdown and exact time at the <span class="notranslate">_Run at_</span> dropdown.
+* If <span class="notranslate">_Run scanning_</span> is set to <span class="notranslate">_Monthly_</span>, choose the day of the month at the <span class="notranslate">_Day of month to run_</span> dropdown and exact time at the <span class="notranslate">_Run at_</span> dropdown.
 
 You can track the scanning activity at the <span class="notranslate">[Malware Scanner](#malware-scanner)</span> tab.
 
