@@ -2,6 +2,19 @@
 
 Imunify360 is an all-in-one security solution with robust herd protection against the newest attacks, and it is available directly within your control panel (cPanel, Plesk, and DirectAdmin).
 
+When you log in to your control panel, Imunify360 asks you to enter your email address.
+
+![](/images/admin_notify.png)
+
+By entering your email address you agree to receive email reports about critical issues, security alerts or system misconfigurations detected on registered servers.
+
+::: tip Note
+This email address is used ONLY for receiving server reports.
+:::
+
+Or you can do it later in the <span class="notranslate">[_Settings → General → Contact Details_](/dashboard/#contact-details)</span> tab.
+
+
 Log in to your control panel as an admin and go to <span class="notranslate">Plugins</span>, choose Imunify360 to get to the Imunify360 user interface.
 
 It allows to access:
@@ -964,6 +977,7 @@ Go to <span class="notranslate">_Imunify360 → Settings → General_</span>. Th
 * <span class="notranslate">[Incidents Logging](/dashboard/#incidents-logging)</span>
 * <span class="notranslate">[WebShield](/dashboard/#webshield)</span>
 * <span class="notranslate">[Error Reporting](/dashboard/#error-reporting)</span>
+* <span class="notranslate">[Contact Details](/dashboard/#contact-details)</span>
 
 #### Installation
 
@@ -1097,6 +1111,18 @@ Click <span class="notranslate">_Save changes_</span> button on the bottom of th
 Tick <span class="notranslate">_Enable Sentry error reporting_</span> checkbox to send reports to Imunify360 error reports server.
 
 ![](/images/error-reporting.png)
+
+Click <span class="notranslate">_Save changes_</span> button on the bottom of the section to save changes.
+
+#### **Contact Details**
+ 
+Type your email into the <span class="notranslate">_Email_</span> field to receive email reports about critical issues, security alerts or system misconfigurations detected on the registered servers.
+
+::: tip Note
+This email address is used ONLY for receiving server reports.
+:::
+
+![](/images/contact_details.png)
 
 Click <span class="notranslate">_Save changes_</span> button on the bottom of the section to save changes.
 
