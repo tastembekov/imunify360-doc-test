@@ -70,13 +70,13 @@ Beta 4.1
 :::
 
 Starting from Imunify360 version 4.1, the Dashboard can display Imunify360 performance data for a number of specified servers. 
-* You can add a specified server using ITS server key – a unique server id that identifies an installed Imunify360 instance.
+* You can add a specified server using its server key – a unique server id that identifies an installed Imunify360 instance.
 
     :::tip Note
    **Server key is NOT a license key**.
     :::
-* You can easily remove a server from that Dashboard.
-* You can use _Server_ drop-down to show a list of all servers added into that Dashboard.
+* You can easily remove a server from the Dashboard.
+* You can use _Server_ drop-down to show a list of all servers added into the Dashboard.
 
 ![](/images/dashboard_servers.png)
 
@@ -85,9 +85,11 @@ Starting from Imunify360 version 4.1, the Dashboard can display Imunify360 perfo
 
 There are two ways to get a server key.
 
-1. Click the key ![](/images/copy_key.png) to copy server key of the selected server to the clipboard.
+1. Click the key symbol ![](/images/copy_key.png) to copy server key of the selected server to the clipboard.
 
-2. Go to the `/var/imunify360/license.json` file (in the WHM go to the _Terminal_ and run `cat /var/imunify360/license.json` command) and find `id` field. Your server id looks like a number-alphabetical string `SghjhgFESDh65CFLfvz`.
+2. Go to the `/var/imunify360/license.json` file and find `id` field. Your server id looks like a alphanumeric string `SghjhgFESDh65CFLfvz`.
+   
+   
   ![](/images/id_from_license.png)
 
 #### **How to add a server**
@@ -100,11 +102,11 @@ If you'd like to display performance data for the server **A** on the Dashboard 
 
   ![](/images/add_server_key.png)
 
-   * Paste that server key belonging to the server **A** to the _Server key_ field
-   * Click _Confirm_ to add the server **A** to the Dashboard of the server **B** or click _Cancel_ to close the pop-up.
+   * Paste the server key belonging to the server **A** to the _Server key_ field
+   * Click _Confirm_ to add the server **A** to the Dashboard of the server **B**. To close the pop-up, click _Cancel_.
   
 
-Go to the _Server_ drop-down to check all added servers – it contains a list of hostnames of all added servers or a list of IPs (if hostname is not found) or a list of server keys (if hostname and IP are not found).
+Go to the _Server_ drop-down to check all added servers – it contains a list of hostnames of all added servers and/or a list of IPs (if a hostname is not found).
 
 #### **How to remove a server**
 
@@ -112,7 +114,7 @@ To remove a server, click the _Trash Can_ symbol ![](/images/remove_server.png).
 
 ![](/images/remove_server_popup.png)
 
-Click _Confirm_ to remove the server or click _Cancel_ to close the pop-up.
+Click _Confirm_ to remove the server. To close the pop-up, click _Cancel_.
 
 ::: tip Note
 You cannot remove the server with the Imunify360 instance installed.
