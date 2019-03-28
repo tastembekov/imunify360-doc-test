@@ -118,7 +118,7 @@ To remove a server, click the _Trash Can_ symbol ![](/images/remove_server.png).
 Click _Confirm_ to remove the server. To stop removing the server and close the pop-up, click _Cancel_.
 
 ::: tip Note
-You cannot remove the server with the Imunify360 instance installed.
+You cannot remove the server from your Imunify360 Dashboard.
 :::
 
 ### Charts and heat maps
