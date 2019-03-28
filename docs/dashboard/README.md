@@ -87,7 +87,7 @@ There are two ways to get a server key.
 
 1. Click the key symbol ![](/images/copy_key.png) to copy server key of the selected server to the clipboard.
 
-2. Go to the `/var/imunify360/license.json` file and find `id` field. Your server id looks like a alphanumeric string `SghjhgFESDh65CFLfvz`.
+2. Go to the `/var/imunify360/license.json` file and find `id` field. Your server id looks like an alphanumeric string `SghjhgFESDh65CFLfvz`.
    
    
   ![](/images/id_from_license.png)
@@ -97,13 +97,13 @@ There are two ways to get a server key.
 If you'd like to display performance data for the server **A** on the Dashboard of the server **B**, please do the following:
 
    * Go to the server **A** Dashboard and copy its server key (see [How to get a server key](/dashboard/#how-to-get-a-server-key))
-   * Go to the server **B** Dashboard and click _Add Server_ ![](/images/add_server.png)
+   * Go to the server **B** Dashboard and click the _Add Server_ button ![](/images/add_server.png)
    * The _Add server key_ pop-up opens
 
   ![](/images/add_server_key.png)
 
    * Paste the server key belonging to the server **A** to the _Server key_ field
-   * Click _Confirm_ to add the server **A** to the Dashboard of the server **B**. To close the pop-up, click _Cancel_.
+   * Click _Confirm_ to add the server **A** to the Dashboard of the server **B**. To stop adding the server and close the pop-up, click _Cancel_.
   
 
 Go to the _Server_ drop-down to check all added servers – it contains a list of hostnames of all added servers and/or a list of IPs (if a hostname is not found).
@@ -111,10 +111,11 @@ Go to the _Server_ drop-down to check all added servers – it contains a list o
 #### **How to remove a server**
 
 To remove a server, click the _Trash Can_ symbol ![](/images/remove_server.png). The _Remove Server_ pop-up opens.
+||
+|--|
+|![](/images/remove_server_popup.png)|
 
-![](/images/remove_server_popup.png)
-
-Click _Confirm_ to remove the server. To close the pop-up, click _Cancel_.
+Click _Confirm_ to remove the server. To stop removing the server and close the pop-up, click _Cancel_.
 
 ::: tip Note
 You cannot remove the server with the Imunify360 instance installed.
