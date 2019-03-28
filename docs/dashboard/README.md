@@ -6,7 +6,7 @@ When you log in to your control panel, Imunify360 asks you to enter your email a
 
 ![](/images/admin_notify.png)
 
-By entering your email address you agree to receive email reports about critical issues, security alerts or system misconfigurations detected on registered servers.
+By entering your email address you agree to receive email reports about critical issues, security alerts or system misconfigurations detected on your servers.
 
 ::: tip Note
 This email address is used ONLY for receiving server reports.
