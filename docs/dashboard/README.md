@@ -542,10 +542,8 @@ To delete a port or separate IP/subnet, click _Bin_ icon in the row of the eleme
 
 ## Malware Scanner
 
-Click <span class="notranslate">_Malware Scanner_</span> in the main menu of Imunify360 user interface to get to the <span class="notranslate">Malware Scanner</span> page.
-
 ::: tip Note
- The functionality described on this page depends on <span class="notranslate">[Malware Scanner settings](/dashboard/#malware)</span>.
+ The functionality described here depends on <span class="notranslate">[Malware Scanner settings](/dashboard/#malware)</span>.
 :::
 
 Imunify360 <span class="notranslate">Malware Scanner</span> can scan file systems for malware injection and quarantine infected files.
@@ -569,26 +567,90 @@ Malware scanning allows you to:
 * observe scanner activity
 * start on-demand file scanner
 * manage malicious and quarantined files
-* manage ignore list
+* manage Ignore List
 
-### Observing Malware Scanner activity
+Click <span class="notranslate">_Malware Scanner_</span> in the main menu of the Imunify360 user interface.
 
-Go to <span class="notranslate">_Malware Scanner_</span> page and choose <span class="notranslate">_Dashboard_</span> tab. On this page, the file scanning activity from the beginning of the current day is displayed by default. It is possible to use a <span class="notranslate">_Timeframe_</span> filter to observe scanner activity within the particular time period.
+![](/images/malwarescanner_general.png)
 
-![](/images/malwarescannerdashboard_zoom70.png)
+The following tabs are available:
 
-The scanner activity is filtered by:
-* <span class="notranslate">_Malicious_</span> – the number of files where Malware Scanner has detected a malicious activity. It is possible to configure the action to be applied to the files:
-  * Delete permanently
-  * Move to quarantine
-  * Try to restore from backup
-  * Display in dashboard
-Please find more details in the <span class="notranslate">[Malware Scanner Settings](/dashboard/#malware)</span> section.
-* <span class="notranslate">_Quarantined_</span> – the number of quarantined files that are not available for the user.
-* <span class="notranslate">_Restored from quarantine_</span> – the list of the files restored from the quarantine manually.
+* [Users](/dashboard/#users)
+* [Files](/dashboard/#files)
+* [Scan](/dashboard/#scan)
+* [History](/dashboard/#history)
+* [Ignore List](/dashboard/#ignore-list)
 
+### Users
 
-### On-demand file scanner
+Go to Imunify360 → Malware Scanner → Users tab. Here, there is a table with a list of users on the server, except users with root privileges.
+
+![](/images/malwarescanner_users.png)
+
+The table has the following columns:
+
+* **User name** — displays the user name.
+* **Home directory** — the path to the user home directory starting from the root.
+* **Infection status** —  the current status depending on the last action made:
+  * **-** — scanning/cleaning is in progress;
+  * **Number of threats** — the number of infected files detected after scanning. Click to go to the _Files_ tab where you can see all malicious files.
+  * **No malware found** — no malware was found during scanning.
+* **Actions**:
+  * **Scan for malware** — click _Scan_ ![](/images/scan_symbol.png) to start scanning files for a particular user.
+  * **View report** — click _View Report_ ![](/images/view_report_symbol.png) to go to the _Files_ tab and display the results of the last scan.
+  * **Cleanup** — click _Cleanup_ ![](/images/cleanup_symbol.png) to start cleaning up infected files for the user.
+  * **Restore original** — click _Restore original_ ![](/images/restore_original_symbol.png) to restore original file after cleaning up if backup is available. To perform a bulk action, tick required users and click the corresponding button above the table.
+
+To clean up all files of all users and scan all files, click _Scan all_ or _Cleanup all_ button above the table.
+
+The following filters are available:
+
+* **Items per page displayed** — click the number at the table bottom.
+
+The table can be sorted by _User name_ and _Infection status_ (by the date of the last action).
+
+### Files
+
+Go to Imunify360 → Malware Scanner → Files tab. Here, there is a table with a list of infected files within all domains and user accounts.
+
+![](/images/malwarescanner_files.png)
+
+The table has the following columns:
+
+* **Detected** — displays the exact time when a file was detected as malicious.
+* **User name** — displays file owner name.
+* **File** — the path where the file is located starting with root
+* **Reason** — describes the signature which was detected during the scanning process. Names in this column depend on the signature vendor.
+* **Status** — displays the file status:
+  * **Infected** — threat was detected after scanning. If a file was not cleaned after cleanup, the info icon is displayed. Hover mouse over info icon to display the reason;
+  * **Cleaned** —  infected file is cleaned up.
+  * **Quarantined** – a file was moved to the quarantine.
+  * **Content removed** — a file content was removed after cleanup.
+  * **Cleanup in progress** — infected file cleanup is in progress now.
+* **Actions**:
+  * **Add to Ignore List** — add file to the Ignore List and remove it from the Malicious files list. Note that if a file is added to the Ignore List, Imunify360 will no longer scan this file. Click the _Gear_ symbol ![](/images/gear.png) and select _Add to Ignore List_.
+  * **Delete permanently** — remove the file from the server and from the list of Malicious files. Click the _Gear_ symbol ![](/images/gear.png) and select _Delete permanently_.
+  * **View file** — click _View file_ symbol ![](/images/view_file_symbol.png) in the file line and the file content will be displayed in the pop-up. Only the first 100Kb of the file content will be shown in case if a file has bigger size.
+  * **Move to quarantine** — move the file to the quarantine. Click _Move to quarantine_ symbol ![](/images/movetoquarantine_symbol.png) and confirm the action in the pop-up.
+  * **Cleanup file** — click _Clean up_ symbol ![](/images/cleanup_symbol.png) to clean up all infected files within the account.
+
+To perform a bulk action, tick required files and click the corresponding button above the table.
+
+Click the desired string to display scan type.
+
+![](/images/malwarescanner_scan_type.png)
+
+To clean up all files of all users, click _Clean up all_ button above the table.
+
+The following filters are available:
+
+* **Timeframe** — displays the results filtered by chosen period or date.
+* **Status** — displays the results filtered by chosen status.
+* **Items per page displayed** — click the number at the table bottom.
+
+The table can be sorted by detection date (detected), user name, file path (file), reason, and status.
+
+### Scan
 
 It is possible to scan a specific directory for malware. Go to <span class="notranslate">_Malware Scanner_</span> page and choose <span class="notranslate">_Scan_</span> tab. Then proceed the following steps:
 
@@ -626,116 +688,54 @@ After <span class="notranslate">Malware Scanner</span> stops on-demand scanning 
 
 To review and manage malicious files go to <span class="notranslate">_Malicious Files_</span> tab described below.
 
-### Managing files detected as malicious
+### History
 
-Go to <span class="notranslate">_Malware Scanner_ → _Dashboard_ → _Malicious Files_</span>. This page has a table with malicious and quarantined files.
+_History_ tab contains data of all actions for all files. Go to Imunify360 → History tab. Here, there is a table with a list of files within all domains.
 
-![](/images/malwarescannerdashboardgeneral_zoom70.png)
+![](/images/malwarescanner_history.png)
 
-Use filters to show a list of files in a table:
+The table has the following columns:
 
-* <span class="notranslate">_Timeframe_</span> – allows to filter files for different time period of detection.
-* <span class="notranslate">_Page size_</span> – allows to set the number of files to be shown on a page.
-* <span class="notranslate">_Search field_</span> – allows to search files by filename.
+* **Date** — action timestamp.
+* **Path to File** — path to the file starting from the root.
+* **Cause** — displays the way malicious file was found:
+  * **Manual** — scanning or cleaning was manually processed by a user.
+  * **On-demand** — scanning or cleaning was initiated/made by a user;
+  * **Real time** — scanning or cleaning was automatically processed by the system.
+* **Owner** — displays a  user name of file owner.
+* **Initiator** — displays the name of a user who was initiated the action. For system actions the name is _System_.
+* **Event** — displays the action with the file:
+  * **Detected as malicious** — after scanning the file was detected as infected.
+  * **Cleaned** — the file is cleaned up.
+  * **Failed to clean up** — there was a problem during cleanup. Hover mouse over the info icon to read more.
+  * **Added to Ignore List** — the file was added to Ignore List. ImunifyAV will not scan it but the file is not quarantined.
+  * **Restored original** — file content was restored as not malicious.
+  * **Cleanup removed content** — file contend was removed after cleanup.
+  * **Deleted from Ignore List** — the file was removed from Ignore List. ImunifyAV will scan it.
+  * **Deleted permanently** — the file was deleted.
+  * **Submitted for analysis** — the file was submitted to Imunify360 team for analysis.
+  * **Quarantined** — the file was added to quarantine. It is no longer executable.
+  * **Restored from quarantine** — for now, the file is executable.
+  * **Failed to delete** — there was a problem during removal. Hover mouse over the info icon to read more.
+  * **Failed to ignore** — there was a problem during adding to Ignore List. Hover mouse over the info icon to read more.
+  * **Failed to delete from ignore** — there was a problem during removal from Ignore List. Hover mouse over the info icon to read more.
+  
+The table can be sorted by Date, Path to File, Cause, and Owner.
 
-### Malicious Files Table
+### Ignore List
 
-The following information is available in the table:
+Ignore List tab contains the list of files that are excluded from Malware Scanner scanning. Go to Imunify360 → Malware Scanner → Ignore List tab. Here, there is a table with a list of files within all domains.
 
-* <span class="notranslate">Date/time of detection</span> – hover mouse over clock icon to show the exact time when file was detected as malicious.
-* <span class="notranslate">Username</span> – file owner name.
-* <span class="notranslate">File</span> – the path where the file is located.
-* <span class="notranslate">Scan type</span> – shows which way was used to detect the malicious activity. Can be one of the following:
-  * <span class="notranslate">On-demand</span>, which means that the file was found during manual scanning;
-  * <span class="notranslate">Real-time</span>, which means that the file was detected during real-time scanning process.
-* <span class="notranslate">Reason</span> – describes the signature which was detected during the scanning process. Names in this column depend on the signature vendor.
-* <span class="notranslate">Quarantined</span> – displays whether a file is put on quarantine or not.
-* <span class="notranslate">Actions</span> – displays the possible actions with a file.
+![](/images/malwarescanner_ignorelist.png)
 
-It is possible to manage suspicious files in the table:
+The table has the following columns:
 
-* Delete files permanently
-* Add to Ignore List
-* View file content
-* Restore from quarantine
-* Restore from backup
-* Cleanup files from malicious code
-
-#### Delete files permanently
-
-Click _Cog_ icon in the file line and choose <span class="notranslate">_Delete permanently_</span> in the drop-down.
-
-![](/images/maliciousfilesdeletepermanently_zoom70.png)
-
-To do mass action tick several checkboxes or one in the table header to perform action on all files and click _Cog_ icon or <span class="notranslate">_Group Actions_</span> link above the table. Choose <span class="notranslate">_Delete permanently_</span> in the drop-down.
-
-![](/images/maliciousfilesdeletepermanentlygroupaction_zoom70.png)
-
-#### Add to ignore list
-
-<span class="notranslate">_Add to ignore list_</span> action is performed simultaneously with <span class="notranslate">_Restore from quarantine_</span> action. Please go to <span class="notranslate">[Restore from quarantine](/malware_scanner.htm#restorefromquarantine/)</span> section.
-Read more about [ignore list](/terminology/).
-
-::: tip Note
-If a file is added to <span class="notranslate">Ignore List, Malware Scanner</span> will no longer scan this file.
-:::
-
-#### View file content
-
-Click _Eye_ icon in the file line and the file content will be displayed in the pop-up. Only the first 100Kb of the file content will be shown in case if a file has bigger size.
-
-#### Restore from quarantine
-
-Click _Fish_ icon in the file line and approve the action in the pop-up. It is possible to send a file to Imunify360 team for analysis and add file to the <span class="notranslate">Ignore List</span>. To do so, tick <span class="notranslate">_Submit to the Imunify360 team for analysis_</span> checkbox and/or <span class="notranslate">_Add to ignore list_</span> checkbox and confirm by clicking <span class="notranslate">_Yes, Restore_</span>.
-
-![](/images/malwarescannerrestorefromquarantine_zoom70.png)
-
-To do mass action tick several checkboxes or one in the table header to perform action on all files and click <span class="notranslate">_Not malware. Restore from quarantine_</span> above the table. Confirm the action in the pop-up.
-
-![](/images/malwarescannerrestorefromquarantinemass_zoom70.png)
-
-#### Restore from backup
-
-Click _Cog_ icon in the file line and choose <span class="notranslate">_Try to restore clean version from backup_</span> in the drop-down. Confirm the action in the pop-up bу clicking <span class="notranslate">_Yes, restore from backup_</span>.
-
-![](/images/malwarescannerrestorefrombackup_zoom70.png)
-To do mass action tick several checkboxes or one in the table header to perform action on all files and click _Cog_ icon or <span class="notranslate">_Group actions_</span> link above the table. Then choose <span class="notranslate">_Try to restore clean version from backup_</span> in the drop-down.
-
-![](/images/malwarescannerrestorefrombackupmass_zoom70.png)
-
-#### Cleanup files from malicious code<sup> 3.7.1+</sup>
-
-This feature allows users to cleanup infected files from malicious code or to remove malicious files.
-Click _Cleanup_ icon in the file line. Cleanup confirmation pop-up opens.
-
-![](/images/malwarecleanupclickicon_zoom70.png)
-
-Click _Yes, cleanup_ to confirm the action or _Cancel_ to close the pop-up.
-![](/images/cleanupconfirmationpopup_zoom80.png)
-
-File status will change to <span class="notranslate">_Cleanup in progress_</span>. When cleanup will be finished the status changes to <span class="notranslate">_Cleaned_</span>.
-To do mass action tick several checkboxes or one in the table header to perform action on all files and click _Cleanup_ icon or <span class="notranslate">_Cleanup files_</span> above the table. Confirm the action in the confirmation pop-up or click <span class="notranslate">_Cancel_</span> to close the pop-up.
-
-![](/images/cleanupmassaction_zoom70.png)
-
-To cleanup all files, click <span class="notranslate">_Cleanup all_</span> button and confirm the action in the confirmation pop-up or click <span class="notranslate">_Cancel_</span> to close the pop-up.
-
-![](/images/cleanupall_zoom70.png)
-
-A user can restore original file cleaned or removed by <span class="notranslate">Malware Cleanup</span> before the infected file expiration date. The keeping period is set in <span class="notranslate">[Malware Scanner Settings](/malware.htm#malwarecleanup/)</span> section.
-
-### Managing Ignore List
-
-Go to <span class="notranslate">Malware Scanner</span> page and choose <span class="notranslate">_Ignore List_</span> tab. The table on the page shows all items (files and folders) added to ignore list and date and time when they have been added.
-
-To add a new file or a new path to the <span class="notranslate">Ignore List</span> do the following:
-
-* click <span class="notranslate">_Add new file_</span> or directory
-* in the pop-up enter the path to be added
-* click <span class="notranslate">_Add_</span>
-
-![](/images/addnewfileordirectory_zoom70.png)
-
+* **Added** — the date when the file was added to Ignore List.
+* **Path** — path to the file starting from the root.
+* **Actions**:
+  * **Remove from Ignore List** — click _Bin_ symbol ![](/images/bin_symbol.png) to remove the file from the Ignore List and start scanning.
+  * **Add new file or directory** — click _Plus_ symbol ![](/images/plus_symbol.png) to add a new file or directory to the Ignore List. In the opened pop-up enter the path to be added and click <span class="notranslate">_Add_</span>.
+   
 ::: tip Note
 Wildcards are not supported when adding paths to Ignore List. For example, the following paths are not supported:
 * <span class="notranslate">`/home/*/mail/`</span>
@@ -743,16 +743,19 @@ Wildcards are not supported when adding paths to Ignore List. For example, the f
 * <span class="notranslate">`/home/*`</span>
 :::
 
-To delete the item click _Bin_ icon and confirm the action. The item(s) will be rechecked by <span class="notranslate">Malware Scanner</span> after removal.
+To perform a bulk action, tick required files and click the corresponding button above the table.
+The following filters are available:
+
+* **Timeframe** — displays the results filtered by chosen period or date.
+* **Items per page** — click the number at the table bottom.
+
+The table can be sorted by _Added_ and _Path_. By default, it is sorted from newest to oldest.
 
 To search file or folder in the <span class="notranslate">Ignore List</span> use <span class="notranslate">_Search_</span> input field above the table.
 
-
 ## Proactive Defense
 
-
 ### Overview
-
  
 <span class="notranslate">Proactive Defense</span> is a unique Imunify360 feature that can prevent malicious activity through PHP scripts. It is available as a PHP module for Apache and LiteSpeed web servers and analyzes script activity using known patterns like obfuscated command injection, malicious code planting, sending spam, SQL injection etc.
 
