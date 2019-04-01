@@ -592,9 +592,9 @@ The table has the following columns:
 * **User name** — displays the user name.
 * **Home directory** — the path to the user home directory starting from the root.
 * **Infection status** —  the current status depending on the last action made:
-  * **On-Demand scanning** — scanning/cleaning up was initiated/made by a user;
+  * **On-Demand scanning** — scanning was initiated/made by an administrator;
   * **Scanning queued** — user's files are queued for scanning;
-  * **Background scanning** — user's files are now scanning;
+  * **Background scanning** — scheduled scanning is in progress;
   * **Scanning scheduled** — user's files scanning is scheduled;
   * **Cleaning up** — user's files are now cleaning up;
   * **Not yet scanned** — user's files have not  been scanned yet;
@@ -639,7 +639,7 @@ The table has the following columns:
   * **Cleanup file** — click _Clean up_ symbol ![](/images/cleanup_symbol.png) to clean up all infected files within the account.
   * **Restore from quarantine** — click _Restore from quarantine_ symbol ![](/images/restore_fromquarantine_symbol.png) to restore the fle from the quarantine.
   * **Restore original file (before cleanup)** — click _Restore original_ symbol ![](/images/restore_original_symbol.png) to restore the original content removed as infected.
-  * **Restore from backup** — click the _Gear_ symbol ![](/images/gear.png) and select _Try to restore from backup_ to restore the original file after cleaning up if backup is available.
+  * **Restore from backup** — click the _Gear_ symbol ![](/images/gear.png) and select _Try to restore from backup_ to restore the original file before it got infected if it exists.
 
 To perform a bulk action, tick required files and click the corresponding button above the table.
 
