@@ -592,8 +592,12 @@ The table has the following columns:
 * **User name** — displays the user name.
 * **Home directory** — the path to the user home directory starting from the root.
 * **Infection status** —  the current status depending on the last action made:
-  * **-** — scanning/cleaning is in progress;
-  * **Number of threats** — the number of infected files detected after scanning. Click to go to the _Files_ tab where you can see all malicious files.
+  * **On-Demand scanning** — scanning/cleaning up was initiated/made by a user;
+  * **Scanning queued** — user's files are queued for scanning;
+  * **Background scanning** — user's files are now scanning;
+  * **Scanning scheduled** — user's files scanning is scheduled;
+  * **Cleaning up** — user's files are now cleaning up;
+  * **Not yet scanned** — user's files have not  been scanned yet;
   * **No malware found** — no malware was found during scanning.
 * **Actions**:
   * **Scan for malware** — click _Scan_ ![](/images/scan_symbol.png) to start scanning files for a particular user.
@@ -633,6 +637,9 @@ The table has the following columns:
   * **View file** — click _View file_ symbol ![](/images/view_file_symbol.png) in the file line and the file content will be displayed in the pop-up. Only the first 100Kb of the file content will be shown in case if a file has bigger size.
   * **Move to quarantine** — move the file to the quarantine. Click _Move to quarantine_ symbol ![](/images/movetoquarantine_symbol.png) and confirm the action in the pop-up.
   * **Cleanup file** — click _Clean up_ symbol ![](/images/cleanup_symbol.png) to clean up all infected files within the account.
+  * **Restore from quarantine** — click _Restore from quarantine_ symbol ![](/images/restore_fromquarantine_symbol.png) to restore the fle from the quarantine.
+  * **Restore original file (before cleanup)** — click _Restore original_ symbol ![](/images/restore_original_symbol.png) to restore the original content removed as infected.
+  * **Restore from backup** — click the _Gear_ symbol ![](/images/gear.png) and select _Try to restore from backup_ to restore the original file after cleaning up if backup is available.
 
 To perform a bulk action, tick required files and click the corresponding button above the table.
 
