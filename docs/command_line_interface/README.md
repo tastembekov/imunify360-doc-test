@@ -69,12 +69,14 @@ Optional arguments for the commands:
 |<span class="notranslate">`--by-country-code [country_code]`</span>|Filters output by country code.<br>Requires valid country code as argument.<br> Find valid country codes [here](https://www.nationsonline.org/oneworld/country_code_list.htm) in column ISO ALPHA-2 CODE.|
 |<span class="notranslate">`--by-ip [ip_address]`</span>|Filters output by abuser's IP or by subnet in [CIDR notation](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#IPv4_CIDR_blocks).<br>Example: <span class="notranslate">`--by-ip 1.2.3.0/24`</span>.|
 |<span class="notranslate">`--by-list`</span>|Can be:<br><ul><li><span class="notranslate">any</span></li><li><span class="notranslate">gray (Gray List)</span></li><li><span class="notranslate">white (White List)</span></li><li><span class="notranslate">black (Black List)</span></li></ul>Filters output based on the list type.<br>Example: <span class="notranslate">`--by-list black`</span>.|
+|<span class="notranslate" style="color:red">--by-comment</span>|<span style="color:red">filters output by comment.</span>|
 |<span class="notranslate">`--limit`</span>|limits the output with specified number of incidents.<br>Must be a number greater than zero. By default, equals 100.|
 |<span class="notranslate">`--offset`</span>|Offset for pagination. By default, equals 0.|
 |<span class="notranslate">`--to`</span>|Allows to set the end of the period for filter.<br>Format is a timestamp.|
-|<span class="notranslate">`--manual-only`</span>|Show only IP’s that have been added manually.|
-|<span class="notranslate">`--no-manual-only`</span>|Show IP’s that have been added both automatically<br>and manually.|
+|<span class="notranslate"><strike>--manual-only</strike> <span style="color:red">--manual</span></span>|Show only <strike>IP’s</strike> <font color="red">items</font> that have been added manually.|
+|<span class="notranslate"><strike>--no-manual-only</strike></span>|<strike>Show IP’s that have been added both automatically<br>and manually.</strike>|
 |<span class="notranslate">`--verbose, -v`</span>|Allows to return data in good-looking view if<br>option <span class="notranslate">`--json`</span> is used.|
+|<span class="notranslate" style="color:red">--order-by</span>|<font color="red">need description</font>.|
  
 <div class="notranslate">
 
@@ -163,6 +165,8 @@ where 12.34.56.78 is that specific IP address.
 | | |
 |-|-|
 |<span class="notranslate">`--comment`</span>| allows to add comment to the item|
+|<span class="notranslate" style="color:red">--expiration</span>|<font color="red">allows to specify TTL for the blacklisted IP</font>|
+|<span class="notranslate" style="color:red">-- client_addr</span>|<font color="red">allows to add an email for the blacklisted item</font>|
 
 **Examples:**
 
@@ -349,11 +353,14 @@ Optional arguments:
 
 </div>
 
-Allows to enable or disable additional CloudLinux software included in Imunify360 for free. The following software is available:
+Allows to enable or disable additional CloudLinux software included in Imunify360 for free.
 
-* [KernelCare](https://www.kernelcare.com)
-* <span class="notranslate">[HardenedPHP](https://www.cloudlinux.com/hardenedphp)</span>
-* <span class="notranslate">Invisible Captcha</span>
+The following software is available:
+
+* [KernelCare](https://www.kernelcare.com) – <font color="red">use kernelcare feature name</font>
+* <span class="notranslate">[HardenedPHP](https://www.cloudlinux.com/hardenedphp)</span> – <font color="red">use hardened-php feature name</font>
+* <span class="notranslate">Invisible Captcha</span> – <font color="red">use invisible-captcha feature name</font>
+* <font color="red">mod_remoteip – use mod_remoteip feature name</font>
 
 Usage:
 
@@ -438,6 +445,7 @@ Option can be one or few of the optional arguments listed above and one more.
 |<span class="notranslate">`--since [timestamp]`</span>|allows to set start time to filter the list of incidents by period|
 |<span class="notranslate">`--to [timestamp]`</span>|allows to set finish time to filter the list of incidents by period|
 |<span class="notranslate">`--severity`</span>|allows to set severity to filter the list of incidents|
+|<font color="red">search</font>|<font color="red">need description</font>|
 
 _Example:_
 
@@ -846,8 +854,9 @@ Option can be:
 | | |
 |-|-|
 |<span class="notranslate">`--id`</span>|ID number of the rule provided by the firewall plugin.|
-|<span class="notranslate">`--plugin`</span>|Firewall plugin name. Can be one of the following:<ul><li><span class="notranslate">`modsec`</span> for ModSecurity</li><li><span class="notranslate">`ossec`</span> for OSSEC</li></ul>|
+|<span class="notranslate">`--plugin`</span>|Firewall plugin name. Can be one of the following:<ul><li><span class="notranslate">`modsec`</span> for ModSecurity</li><li><span class="notranslate">`ossec`</span> for OSSEC</li><li><font color="red">lfd – need description</font></li></ul>|
 |<span class="notranslate">`--name`</span>|Name of the added rule or details of the rule from <span class="notranslate">ModSecurity</span> or OSSEC.|
+|<font color="red">--domains</font>|<font color="red">need description</font>|
 
 **Examples**
 1. The following command adds a rule with id 42 and name <span class="notranslate">‘Rule name’</span> for the <span class="notranslate">ModSecurity</span> rules to the disabled rules list:
@@ -1066,6 +1075,7 @@ imunify360-agent whitelist [subject] [command] <value> [--option]
 |<span class="notranslate">`move`</span>|Move item(-s) to the <span class="notranslate">White List</span>.|
 |<span class="notranslate">`edit`</span>|Edit comment on the item in the <span class="notranslate">White List</span>.|
 |<span class="notranslate">`list`</span>|List items(-s) in the <span class="notranslate">White List</span>.|
+|<font color="red">reset-to</font>|<font color="red">Replace whitelisted domains list with a new list.</font>|
 
 Please note that by default <span class="notranslate">`list`</span> command outputs only first 100 items in the list as if it was run as <span class="notranslate">`whitelist ip list --limit 100`</span>.
 To check whether specific IP address is in the list, you can run the following command:
@@ -1089,6 +1099,8 @@ where `12.34.56.78` is that specific IP address.
 |<span class="notranslate">`--comment`</span>|Allows to add a comment to the item.|
 |<span class="notranslate">`--full-access`</span>|Only for <span class="notranslate">`move`</span> and <span class="notranslate">`edit`</span> commands.<br>Allows to grant full access to the IP or subnet ignoring the rules in Blocked ports.|
 |<span class="notranslate">`--no-full-access`</span>|Only for <span class="notranslate">`move`</span> and <span class="notranslate">`edit`</span> commands.<br>Allows to remove full access of the IP or subnet.|
+|<span class="notranslate" style="color:red">--expiration</span>|<font color="red">allows to specify TTL for the whitelisted IP</font>|
+|<span class="notranslate" style="color:red">-- client_addr</span>|<font color="red">allows to add an email for the whitelisted item</font>|
 
 **Examples:**
 
@@ -1160,6 +1172,7 @@ Available commands:
 |<span class="notranslate">`details`</span>|allows to show details for the event.|
 |<span class="notranslate">`ignore list`</span>|allows to list files included to <span class="notranslate">Proactive Defense Ignore List</span>.|
 |<span class="notranslate">`ignore add`</span>|allows to add a file to <span class="notranslate">Proactive Defense Ignore List</span>.|
+|<font color="red">ignore addmany</font>|<font color="red">allows to add some files at once to Proactive Defense Ignore List</font>.|
 
 <span class="notranslate">`option`</span> can be one or few of the optional arguments listed above and one more.
 
@@ -1169,6 +1182,12 @@ Available commands:
 |<span class="notranslate">`--id`</span>|for <span class="notranslate">`details`</span>, <span class="notranslate">`ignore delete rule`</span> commands.<br>Allows to specify rule id.|
 |<span class="notranslate">`--rule-id`</span>|only for <span class="notranslate">`ignore add`</span> command.<br>Allows to specify rule id.|
 |<span class="notranslate">`--rule-name`</span>|only for <span class="notranslate">`ignore add`</span> command.<br>Allows to specify rule name.|
+|<font color="red">--since [timestamp]</font>|<font color="red">allows to set start time to filter the list of incidents by period</font>|
+|<font color="red">--to [timestamp]</font>|<font color="red">allows to set finish time to filter the list of incidents by period</font>|
+|<font color="red">--user</font>|<font color="red">need description</font>|
+|<font color="red">--search</font>|<font color="red">need description</font>|
+|<font color="red">--paths</font>|<font color="red">for the ignore addmany command. Allows to to specify paths separated by comma to the files.</font>|
+
 
 **Examples:**
 
