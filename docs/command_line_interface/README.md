@@ -166,7 +166,6 @@ where 12.34.56.78 is that specific IP address.
 |-|-|
 |<span class="notranslate">`--comment`</span>| allows to add comment to the item|
 |<span class="notranslate" style="color:red">--expiration</span>|<font color="red">allows to specify TTL for the blacklisted IP</font>|
-|<span class="notranslate" style="color:red">-- client_addr</span>|<font color="red">allows to add an email for the blacklisted item</font>|
 
 **Examples:**
 
@@ -360,7 +359,6 @@ The following software is available:
 * [KernelCare](https://www.kernelcare.com) – <font color="red">use kernelcare feature name</font>
 * <span class="notranslate">[HardenedPHP](https://www.cloudlinux.com/hardenedphp)</span> – <font color="red">use hardened-php feature name</font>
 * <span class="notranslate">Invisible Captcha</span> – <font color="red">use invisible-captcha feature name</font>
-* <font color="red">mod_remoteip – use mod_remoteip feature name</font>
 
 Usage:
 
@@ -1100,7 +1098,6 @@ where `12.34.56.78` is that specific IP address.
 |<span class="notranslate">`--full-access`</span>|Only for <span class="notranslate">`move`</span> and <span class="notranslate">`edit`</span> commands.<br>Allows to grant full access to the IP or subnet ignoring the rules in Blocked ports.|
 |<span class="notranslate">`--no-full-access`</span>|Only for <span class="notranslate">`move`</span> and <span class="notranslate">`edit`</span> commands.<br>Allows to remove full access of the IP or subnet.|
 |<span class="notranslate" style="color:red">--expiration</span>|<font color="red">allows to specify TTL for the whitelisted IP</font>|
-|<span class="notranslate" style="color:red">-- client_addr</span>|<font color="red">allows to add an email for the whitelisted item</font>|
 
 **Examples:**
 
