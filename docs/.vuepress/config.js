@@ -26,7 +26,7 @@ module.exports = {
     }
   },
   theme: "cloudlinux",
-  // theme: '/Users/prefer/src/cloudlinux-doc-theme', // local path
+  // theme: '/Users/prefer/src/cloudlinux-doc-theme', // Local path
   markdown: {
       slugify: (s) => {
         if (sidebarUrls[s]) {
